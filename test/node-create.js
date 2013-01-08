@@ -26,17 +26,6 @@ describe('graph node creation tests', function() {
         graph.save(done);
     });
 
-    /*
-    it('should be able to retrieve the newly created node from the graph', function(done) {
-        graph.find({ id: testNode.id }, function(err, results) {
-            assert.ifError(err);
-            assert.equal(results[0].id, testNode.id);
-
-            done();
-        });
-    });
-*/
-
     after(function(done) {
         graph.close(done);
     });
