@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "async": "0.1.x",
+    "debug": "*",
     "node-uuid": "1.4.x",
     "underscore": "1.4.x"
   },

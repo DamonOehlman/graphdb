@@ -1,24 +1,4 @@
-var opts = {};
-
-switch ((process.env.GRAPHDB_CONNECTOR || '').toLowerCase()) {
-    case 'orientdb': {
-        opts = {
-            connector: require('graphdb-orient'),
-        };
-
-        break;
-    }
-
-    case 'neo4j': {
-
-        break;
-    }
-
-    default: {
-        opts = {
-            type: 'memory'
-        }
-    }
-}
-
-module.exports = opts;
+var _ = require('underscore'),
+    opts = module.exports = _.defaults({
+        connector: (process.env.GRAPHDB_CONNECTOR || '').toLowerCase()
+    }, { connector: 'memory' });
