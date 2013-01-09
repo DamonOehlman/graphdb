@@ -19,12 +19,12 @@ describe('graph type definition', function() {
     });
 
     it('should have defined the id attribute of a profile as a uuid', function() {
-        assert(graph.types.profile.id);
+        assert(graph.types.profile.id, 'id attribute not defined on profile');
         assert.equal(graph.types.profile.id.type, 'uuid');
     });
 
     it('should have defined the name attribute of a profile as a string', function() {
-        assert(graph.types.profile.name);
+        assert(graph.types.profile.name, 'name attribute not defined on profile');
         assert.equal(graph.types.profile.name.type, 'string');
     });
 
