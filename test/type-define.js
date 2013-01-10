@@ -14,6 +14,14 @@ describe('graph type definition', function() {
         });
     });
 
+    it('should raise an exception when an attribute type is missing', function() {
+        assert.throws(function() {
+            graph.types.define('profile2', {
+                name: undefined
+            });
+        });
+    });
+
     it('should be able to validate the type dictionary has a profile', function() {
         assert(graph.types.profile);
     });
