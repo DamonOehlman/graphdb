@@ -10,6 +10,7 @@ describe('graph node creation tests', function() {
 
     it('should be able to define a simple profile type', function() {
         graph.types.define('profile', {
+            id: graph.types.uuid,
             name: graph.types.string
         });
     });
