@@ -15,10 +15,10 @@ describe('graph node creation tests', function() {
     });
 
     it('should be able to create a new graph node', function() {
-        testNode = graph.create('profile', { name: 'Jack O\'Neill' });
+        testNode = graph.create({ name: 'Jack O\'Neill' }, 'profile');
 
-        assert(testNode);
-        assert(testNode.id);
+        assert(testNode, 'Node creation failure');
+        assert(testNode.id, 'Created node does not have a valid id');
         assert.equal(testNode.type, 'profile');
     });
 
