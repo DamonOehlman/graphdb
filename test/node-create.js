@@ -28,7 +28,9 @@ describe('graph node creation tests', function() {
 
     it('should be able to get the node from the db', function(done) {
         graph.get(testNode, function(err, node) {
-            console.log(node);
+            assert.ifError(err);
+            assert.equal(node.id, testNode.id);
+
             done();
         });
     });
