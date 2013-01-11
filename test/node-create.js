@@ -15,7 +15,7 @@ describe('graph node creation tests', function() {
     });
 
     it('should be able to create a new graph node', function() {
-        testNode = graph.create({ type: 'profile' });
+        testNode = graph.create('profile', { name: 'Jack O\'Neill' });
 
         assert(testNode);
         assert(testNode.id);
