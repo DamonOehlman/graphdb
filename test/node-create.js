@@ -10,7 +10,6 @@ describe('graph node creation tests', function() {
 
     it('should be able to define a simple profile type', function() {
         graph.types.define('profile', {
-            id: graph.types.uuid,
             name: graph.types.string
         });
     });
@@ -25,6 +24,13 @@ describe('graph node creation tests', function() {
 
     it('should be able to save the graph', function(done) {
         graph.save(done);
+    });
+
+    it('should be able to get the node from the db', function(done) {
+        graph.get(testNode, function(err, node) {
+            console.log(node);
+            done();
+        });
     });
 
     after(function(done) {

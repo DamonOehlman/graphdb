@@ -9,7 +9,6 @@ describe('graph type definition', function() {
 
     it('should be able to define a new profile type', function() {
         graph.types.define('profile', {
-            id: graph.types.uuid,
             name: graph.types.string
         });
     });
@@ -24,11 +23,6 @@ describe('graph type definition', function() {
 
     it('should be able to validate the type dictionary has a profile', function() {
         assert(graph.types.profile);
-    });
-
-    it('should have defined the id attribute of a profile as a uuid', function() {
-        assert(graph.types.profile.id, 'id attribute not defined on profile');
-        assert.equal(graph.types.profile.id.type, 'uuid');
     });
 
     it('should have defined the name attribute of a profile as a string', function() {
