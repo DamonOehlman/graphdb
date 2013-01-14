@@ -1,10 +1,12 @@
-var assert = require('assert'),
-    graphdb = require('../'),
-    graph;
+var assert = require('assert');
 
 describe('graph relationship definition', function() {
-    before(function(done) {
-        graph = graphdb(require('./helpers/connect-opts')).open(done);
+    var graph = require('./helpers/connect');
+
+    before(function() {
+        // undefine the author and the book type
+        graph.types.author = undefined;
+        graph.types.book = undefined;
     });
 
     it('should be able to define a new author type', function() {
@@ -25,9 +27,5 @@ describe('graph relationship definition', function() {
 
     it('should be able to define a linkage between authors and books', function() {
         graph.types.relate(graph.types.author, graph.types.book, 'wrote');
-    });
-
-    after(function(done) {
-        graph.close(done);
     });
 });

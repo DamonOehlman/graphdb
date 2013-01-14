@@ -1,11 +1,7 @@
-var assert = require('assert'),
-    graphdb = require('../'),
-    graph;
+var assert = require('assert');
 
 describe('graph type definition', function() {
-    before(function(done) {
-        graph = graphdb(require('./helpers/connect-opts')).open(done);
-    });
+    var graph = require('./helpers/connect');
 
     it('should be able to define a new profile type', function() {
         graph.types.define('profile', {
@@ -28,9 +24,5 @@ describe('graph type definition', function() {
                 name: undefined
             });
         });
-    });
-
-    after(function(done) {
-        graph.close(done);
     });
 });

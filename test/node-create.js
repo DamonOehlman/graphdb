@@ -1,12 +1,8 @@
-var assert = require('assert'),
-    graphdb = require('../'),
-    graph,
-    testNode;
+var assert = require('assert');
 
 describe('graph node creation tests', function() {
-    before(function(done) {
-        graph = graphdb(require('./helpers/connect-opts')).open(done);
-    });
+    var graph = require('./helpers/connect'),
+        testNode;
 
     it('should be able to define a simple profile type', function() {
         graph.types.define('profile', {
@@ -33,9 +29,5 @@ describe('graph node creation tests', function() {
 
             done();
         });
-    });
-
-    after(function(done) {
-        graph.close(done);
     });
 });
