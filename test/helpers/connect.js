@@ -1,7 +1,7 @@
 var graphdb = require('../../'),
     graph = graphdb(require('./connect-opts'));
 
-module.exports = function() {
+var connect = module.exports = function() {
     before(function(done) {
         graph.open(done);
     });
@@ -12,3 +12,5 @@ module.exports = function() {
     
     return graph;
 };
+
+connect.graph = graph;

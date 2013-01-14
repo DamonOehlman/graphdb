@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 describe('graph relationship definition', function() {
-    var graph = require('./helpers/connect')();
+    var graph = require('./helpers/connect').graph;
 
     before(function() {
         // undefine the author and the book type
