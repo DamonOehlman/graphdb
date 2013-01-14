@@ -11,6 +11,8 @@ describe('graph type definition', function() {
         graph.types.define('profile', {
             name: graph.types.string
         });
+
+        assert(graph.types.profile);
     });
 
     it('should raise an exception when an attribute type is missing', function() {
