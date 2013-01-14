@@ -6,4 +6,4 @@ var graphdb = module.exports = function(opts) {
 
 // export some of the internal prototypes
 graphdb.Graph = Graph;
-graphdb.GraphNode = require('./lib/graph-node');
+graphdb.GraphEntity = require('./lib/graph-entity');
