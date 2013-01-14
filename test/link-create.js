@@ -6,7 +6,8 @@ var assert = require('assert'),
 describe('graph link creation tests', function() {
     var graph = require('./helpers/connect'),
         testAuthor,
-        testBook;
+        testBook,
+        testEdge;
 
     // include the base define relationship tests
     require('./define-relationship');
@@ -39,11 +40,37 @@ describe('graph link creation tests', function() {
 
     describe('linking objects', function() {
         it('should be able to create a relationship between the author and book', function() {
-            testAuthor.wrote(testBook);
+            testEdge = testAuthor.wrote(testBook, {
+                percentage: 100
+            });
+
+            assert(testEdge);
+            assert(testEdge.id);
+            assert.equal(testEdge.percentage, 100);
         });
 
         it('should be able to save the graph', function(done) {
             graph.save(done);
+        });
+
+        it('should be able to update a property of the edge', function() {
+            testEdge.percentage = 50;
+            assert.equal(testEdge.percentage, 50);
+        });
+
+        it('should be able to save the graph with the updated value', function(done) {
+            graph.save(done);
+        });
+
+        it('should be able to retrieve the edge from the db', function(done) {
+            graph.get(testEdge, function(err, edge) {
+                assert.ifError(err);
+                assert(edge);
+
+                assert.equal(edge.id, testEdge.id);
+                assert.equal(edge.percentage, 50);
+                done();
+            });
         });
     });
 });

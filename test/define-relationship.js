@@ -26,6 +26,8 @@ describe('graph relationship definition', function() {
     });
 
     it('should be able to define a linkage between authors and books', function() {
-        graph.types.relate(graph.types.author, graph.types.book, 'wrote');
+        graph.types.relate(graph.types.author, graph.types.book, 'wrote', {
+            percentage: graph.types.float
+        });
     });
 });
