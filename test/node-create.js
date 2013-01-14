@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 describe('graph node creation tests', function() {
-    var graph = require('./helpers/connect'),
+    var graph = require('./helpers/connect')(),
         testNode;
 
     it('should be able to define a simple profile type', function() {

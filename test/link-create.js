@@ -4,7 +4,7 @@ var assert = require('assert'),
     testNode;
 
 describe('graph link creation tests', function() {
-    var graph = require('./helpers/connect'),
+    var graph = require('./helpers/connect')(),
         testAuthor,
         testBook,
         testEdge;
