@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-describe('graph node creation tests', function() {
+describe('graph node update tests', function() {
     var graph = require('./helpers/connect')(),
         testNode;
 
@@ -31,10 +31,12 @@ describe('graph node creation tests', function() {
     });
 
     it('should be able to get the node from the db', function(done) {
-        graph.get(testNode.id, testNode.type, function(err, node) {
+        graph.find(testNode, function(err, results) {
             assert.ifError(err);
-            assert.equal(node.id, testNode.id);
-            assert.equal(node.name, 'Daniel Jackson');
+            assert(results.length > 0);
+
+            assert.equal(results[0].id, testNode.id);
+            assert.equal(results[0].name, 'Daniel Jackson');
 
             done();
         });
