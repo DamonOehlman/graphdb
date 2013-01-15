@@ -63,12 +63,12 @@ describe('graph link creation tests', function() {
         });
 
         it('should be able to retrieve the edge from the db', function(done) {
-            graph.get(testEdge, function(err, edge) {
+            graph.find(testEdge, function(err, results) {
                 assert.ifError(err);
-                assert(edge);
+                assert(results.length > 0);
 
-                assert.equal(edge.id, testEdge.id);
-                assert.equal(edge.percentage, 50);
+                assert.equal(results[0].id, testEdge.id);
+                assert.equal(results[0].percentage, 50);
                 done();
             });
         });

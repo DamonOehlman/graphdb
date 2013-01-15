@@ -43,11 +43,11 @@ describe('untyped graph link creation tests', function() {
         });
 
         it('should be able to retrieve the edge from the db', function(done) {
-            graph.get(testEdge, function(err, edge) {
+            graph.find(testEdge, function(err, results) {
                 assert.ifError(err);
-                assert(edge, 'edge was not successfully retrieved from the db');
+                assert(results.length > 0, 'could not find requested edge');
 
-                assert.equal(edge.id, testEdge.id);
+                assert.equal(results[0].id, testEdge.id);
                 done();
             });
         });

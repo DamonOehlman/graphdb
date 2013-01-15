@@ -17,9 +17,10 @@ describe('untyped graph node creation tests', function() {
     });
 
     it('should be able to get the node from the db', function(done) {
-        graph.get(testNode, function(err, node) {
+        graph.find(testNode, function(err, results) {
             assert.ifError(err);
-            assert.equal(node.id, testNode.id);
+            assert(results.length > 0);
+            assert.equal(results[0].id, testNode.id);
 
             done();
         });
