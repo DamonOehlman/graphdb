@@ -54,6 +54,14 @@ var node = graph.create({ name: 'Ted' }, 'profile');
 console.log(node.name); // --> Ted
 ```
 
+### In-built Basic Types
+
+The following is a list of data-types that are expected to be implemented by all graphdb connector modules:
+
+- `uuid`
+- `string`
+- `integer`
+
 ## Licence
 
 MIT. Clean and Simple.
