@@ -25,4 +25,25 @@ describe('graph type definition', function() {
             });
         });
     });
+
+    it('should be able to define a complicated type', function() {
+        graph.types.define('company', {
+            name: graph.types.string,
+            created: graph.types.date,
+            members: graph.types.listOf('profile')
+        });
+    });
+
+    it('should have the complicated type definition available', function() {
+        assert(graph.types.company);
+        console.log(graph.types.company);
+    });
+
+    it('should be able to define an alias chain for a known type', function() {
+        graph.types.define('color').alias('string');
+        graph.types.define('fillColor').alias('color');
+
+        // validate that the base type name for fillColor -> string
+        assert.equal(graph.types.getBaseType('fillColor'), 'string');
+    });
 });
