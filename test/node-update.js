@@ -1,4 +1,5 @@
-var assert = require('assert');
+var assert = require('assert'),
+    GraphEntity = require('../lib/graph-entity');
 
 describe('graph node update tests', function() {
     var graph = require('./helpers/connect')(),
@@ -34,6 +35,9 @@ describe('graph node update tests', function() {
         graph.find(testNode, function(err, results) {
             assert.ifError(err);
             assert(results.length > 0);
+
+            assert(results[0] instanceof GraphEntity, 'find result node is not a valid GraphEntity object');
+            assert.equal(results[0].type, 'profile');
 
             assert.equal(results[0].id, testNode.id);
             assert.equal(results[0].name, 'Daniel Jackson');
