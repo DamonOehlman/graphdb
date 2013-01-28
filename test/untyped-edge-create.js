@@ -43,7 +43,7 @@ describe('untyped graph link creation tests', function() {
         });
 
         it('should be able to retrieve the edge from the db', function(done) {
-            graph.find(testEdge, function(err, results) {
+            graph.find({ id: testEdge.id }, function(err, results) {
                 assert.ifError(err);
                 assert(results.length > 0, 'could not find requested edge');
 

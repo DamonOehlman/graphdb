@@ -9,7 +9,6 @@ describe('untyped graph node creation tests', function() {
 
         assert(testNode, 'Node creation failure');
         assert(testNode.id, 'Created node does not have a valid id');
-        // assert.equal(testNode.type, 'profile');
     });
 
     it('should be able to save the graph', function(done) {
@@ -17,9 +16,9 @@ describe('untyped graph node creation tests', function() {
     });
 
     it('should be able to get the node from the db', function(done) {
-        graph.find(testNode, function(err, results) {
+        graph.find({ id: testNode.id }, function(err, results) {
             assert.ifError(err);
-            assert(results.length > 0);
+            assert(results.length > 0, '0 results');
             assert.equal(results[0].id, testNode.id);
 
             done();

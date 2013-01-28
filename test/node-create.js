@@ -25,7 +25,7 @@ describe('graph node creation tests', function() {
     it('should be able to get the node from the db', function(done) {
         graph.find(testNode, function(err, results) {
             assert.ifError(err);
-            assert(results.length > 0);
+            assert(results.length > 0, 'No matching results returned');
 
             assert.equal(results[0].id, testNode.id);
 
