@@ -30,13 +30,19 @@ describe('graph type definition', function() {
         graph.types.define('company', {
             name: graph.types.string,
             created: graph.types.date,
-            members: graph.types.listOf('profile')
+            members: graph.types.listOf('profile'),
+            urls: graph.types.listOf(graph.types.string)
         });
     });
 
     it('should have the complicated type definition available', function() {
         assert(graph.types.company);
-        console.log(graph.types.company);
+
+        // ensure the list types have been created successfully
+        assert(graph.types.company.attributes.members);
+        assert.equal(graph.types.company.attributes.members.type, 'profileList');
+        assert(graph.types.company.attributes.urls);
+        assert.equal(graph.types.company.attributes.urls.type, 'stringList');
     });
 
     it('should be able to define an alias chain for a known type', function() {
