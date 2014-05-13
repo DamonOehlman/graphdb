@@ -12,6 +12,8 @@ var graphdb = module.exports = function(opts) {
   GraphDB provides high level graph operations (create node, link, etc) that are
   generally common amongst all graph databases.
 
+  ## Persistence
+
   The GraphDB package itself has no persistence capabilities in it's own right,
   but uses connector packages to implement store specific serialization:
 

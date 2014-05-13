@@ -5,15 +5,17 @@ of working with [graph databases](http://en.wikipedia.org/wiki/Graph_database).
 GraphDB provides high level graph operations (create node, link, etc) that are
 generally common amongst all graph databases.
 
+
+[![NPM](https://nodei.co/npm/graphdb.png)](https://nodei.co/npm/graphdb/)
+
+
+## Persistence
+
 The GraphDB package itself has no persistence capabilities in it's own right,
 but uses connector packages to implement store specific serialization:
 
 - [graphdb-orient](https://github.com/DamonOehlman/graphdb-orient) -
   [OrientDB](http://www.orientdb.org) persistence.
-
-
-[![NPM](https://nodei.co/npm/graphdb.png)](https://nodei.co/npm/graphdb/)
-
 
 ## Usage
 
