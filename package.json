@@ -20,7 +20,8 @@
     "url": "http://github.com/DamonOehlman/graphdb/issues"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "gendocs": "gendocs > README.md"
   },
   "main": "index.js",
   "directories": {
