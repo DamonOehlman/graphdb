@@ -2,7 +2,7 @@
   "name": "graphdb",
   "description": "Graph Database Operations with platform specific adapters",
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "dependencies": {
     "async": "~0.8",
     "debug": "*",
