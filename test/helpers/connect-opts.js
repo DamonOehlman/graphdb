@@ -15,7 +15,7 @@ switch (opts.connector) {
         };
 
         opts.users = {
-            root:   process.env.ORIENTDB_ROOTPASS || 'FDB6C4ED52608E5942F84FE0CAE4C33462846C0B2F0FE0AAE5FA492BB72B6DDE',
+            root:   process.env.ORIENTDB_ROOTPASS || '5D2E27810D509BF350D44027205082F2584F3517E456411652B6AF8715219AA5',
             admin:  'admin',
             writer: 'writer',
             reader: 'reader'
