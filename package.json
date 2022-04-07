@@ -4,7 +4,7 @@
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "0.1.7",
   "dependencies": {
-    "async": "~0.8",
+    "async": "~3.2.2",
     "debug": "*",
     "underscore": "^1",
     "uuid": "^1"
